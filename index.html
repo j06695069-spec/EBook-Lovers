@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>EBook Lovers</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="app">
+  <!-- MODE SELECTION -->
+  <div id="mode-screen">
+    <h1>Instant Ebook Studio</h1>
+    <p>Select a mode:</p>
+    <button class="primary" id="writeModeBtn">Write a Book</button>
+    <button class="primary" id="readModeBtn">Read Published Books</button>
+  </div>
+
+  <!-- WRITE MODE -->
+  <div id="write-screen" class="hidden">
+    <h2>Write a Book</h2>
+
+    <label for="bookTitle">Title</label>
+    <input id="bookTitle" type="text">
+
+    <label for="bookSubtitle">Subtitle (optional)</label>
+    <input id="bookSubtitle" type="text">
+
+    <label for="bookAuthor">Author (optional)</label>
+    <input id="bookAuthor" type="text">
+
+    <label for="bookContent">Write your book</label>
+    <textarea id="bookContent"></textarea>
+
+    <label for="fileUpload">Upload .txt or .md</label>
+    <input type="file" id="fileUpload" accept=".txt,.md">
+
+    <div class="row">
+      <button id="saveDraftBtn">Save Draft</button>
+      <button id="openDraftBtn">Open Saved Book</button>
+      <button class="primary" id="publishBtn">Publish</button>
+      <button id="backToMenu1">Back</button>
+    </div>
+
+    <button id="unpublishBtn" class="hidden danger">Unpublish This Book</button>
+
+    <div id="saveCodeBox" class="hidden info-box"></div>
+
+    <div id="openDraftBox" class="hidden">
+      <input id="draftCodeInput" placeholder="Enter save code">
+      <button id="loadDraftBtn">Load</button>
+    </div>
+  </div>
+
+  <!-- READ MODE -->
+  <div id="read-screen" class="hidden">
+    <h2>Published Books</h2>
+    <div id="publishedList"></div>
+    <button id="backToMenu2">Back</button>
+  </div>
+
+  <!-- READER -->
+  <div id="reader-screen" class="hidden">
+    <h2 id="readerTitle"></h2>
+
+    <div id="pageBox" class="page"></div>
+
+    <div class="reader-controls">
+      <button id="prevPageBtn">⟵ Previous</button>
+
+      <div class="page-jump">
+        <label for="pageNumberInput">Page</label>
+        <input id="pageNumberInput" type="number" min="1">
+        <span id="pageCountLabel"></span>
+        <button id="goPageBtn">Go</button>
+      </div>
+
+      <button id="nextPageBtn">Next ⟶</button>
+    </div>
+
+    <button id="exitReaderBtn">Exit Reader</button>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
